@@ -99,7 +99,7 @@ import streamlit as st
 
 # Set the title of the app
 st.title("Your financial assistant🤖💬")
-st.write("🤖Hello! I'm Umar's Chatbot to assist you")
+st.write("🤖Hello! I'm Umar's Chatbot to assist you.")
 
 # Create a text input for user queries
 user_input = st.text_input("You💬:", "")
@@ -126,22 +126,22 @@ st.sidebar.write("""Welcome to your financial assistant!😊 Whether you need to
 
 
 
-st.markdown("""
-    <style>
-        .stButton>button {
-            background-color: #28a745
-        ;
-            color: white;
-            font-size: 20px;
-            border-radius: 12px;
-            padding: 10px 20px;
-            border: none;
-        }
-        .stButton>button:hover {
-            background-color: #ff4500;
-        }
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#         .stButton>button {
+#             background-color: #28a745
+#         ;
+#             color: white;
+#             font-size: 20px;
+#             border-radius: 12px;
+#             padding: 10px 20px;
+#             border: none;
+#         }
+#         .stButton>button:hover {
+#             background-color: #ff4500;
+#         }
+#     </style>
+# """, unsafe_allow_html=True)
 
 
 
