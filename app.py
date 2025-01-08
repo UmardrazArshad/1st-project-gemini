@@ -7,6 +7,7 @@ from langchain.agents import initialize_agent, AgentType
 import streamlit as st
 
 
+
 load_dotenv()
 
 
@@ -92,9 +93,98 @@ llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash-exp" , api_key=GOOGLE_API
 
 agent = initialize_agent(tools, llm , agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION )
 
-st.title("Gemini Tool calling")
-st.write("wellcome to Umar's Chatbot")
-user_input = st.text_input("Enter you prompt..")
+# Interface
+
+import streamlit as st
+
+# Set the title of the app
+st.title("Your financial assistant🤖💬")
+st.write("🤖Hello! I'm Umar's Chatbot to assist you")
+
+# Create a text input for user queries
+user_input = st.text_input("You💬:", "")
+
+if user_input:
+    # Here you can integrate your AI model to generate a response
+    # For now, we will just echo back the user's input
+    response = f"You said💬: {user_input}"
+
+    # Display the response
+    st.text_area("Response🤖:", response, height=150)
+
 if st.button("Submit"):
     response = agent.invoke(user_input)
-    st.write(response)
+    st.write(response) 
+# Additional styled section for user assistance
+st.sidebar.header("Instructions")
+st.sidebar.write("""Welcome to your financial assistant!😊 Whether you need to calculate
+                  investment returns , assess loan payments 💰, or stay updated on the latest 
+                 stock prices 📉, this chatbot has you covered! Get real-time insights 🌍, make 
+                 smarter decisions 💡, and track your portfolio—all in one place. Start using 
+                 it now and take control of your finances! 🚀💸""")
+
+
+
+
+st.markdown("""
+    <style>
+        .stButton>button {
+            background-color: #28a745
+        ;
+            color: white;
+            font-size: 20px;
+            border-radius: 12px;
+            padding: 10px 20px;
+            border: none;
+        }
+        .stButton>button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+import streamlit as st
+
+# Custom CSS to create a colorful title
+st.markdown("""
+    <style>
+        .big-font {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(90deg, #ff6347, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Add a colorful title
+import streamlit as st
+
+# Custom CSS to create a colorful title and position it at the top
+st.markdown("""
+    <style>
+        /* Ensure the title is at the top */
+        .big-font {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(90deg, #ff6347, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+            -webkit-background-clip: text;
+            color: transparent;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-top: 0;
+        }
+        /* Optional: add some space after the title to separate from content */
+        .content-space {
+            padding-top: 40px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Add the colorful title at the top
+st.markdown('<p class="big-font">Welcome to my Chatbot!</p>', unsafe_allow_html=True)
