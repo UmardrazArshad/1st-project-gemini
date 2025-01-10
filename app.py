@@ -104,16 +104,16 @@ st.write("🤖Hello! I'm Umar's Chatbot to assist you.")
 # Create a text input for user queries
 user_input = st.text_input("You💬:", "")
 
-if user_input:
-    # Here you can integrate your AI model to generate a response
-    # For now, we will just echo back the user's input
-    response = f"You said💬: {user_input}"
+# if user_input:
+#     # Here you can integrate your AI model to generate a response
+#     # For now, we will just echo back the user's input
+#     # response = f"You said💬: {user_input}"
 
-    # Display the response
-    st.text_area("Response🤖:", response, height=150)
+#     # Display the response
+#     st.text_area("Response🤖:", response, height=150)
 
 if st.button("Submit"):
-    response = agent.invoke(user_input)
+    user_input = agent.invoke(user_input)
     st.write(response) 
 # Additional styled section for user assistance
 st.sidebar.header("Instructions")
