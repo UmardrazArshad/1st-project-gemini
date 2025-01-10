@@ -113,7 +113,7 @@ user_input = st.text_input("You💬:", "")
 #     st.text_area("Response🤖:", response, height=150)
 
 if st.button("Submit"):
-    user_input = agent.invoke(user_input)
+    response = agent.invoke(user_input)
     st.write(response) 
 # Additional styled section for user assistance
 st.sidebar.header("Instructions")
